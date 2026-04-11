@@ -6,7 +6,8 @@
     "build": "wp-scripts build",
     "start": "wp-scripts start",
     "lint:css": "wp-scripts lint-style",
-    "lint:js": "wp-scripts lint-js"
+    "lint:js": "wp-scripts lint-js",
+    "theme-zip": "npm run build && node scripts/theme-zip.js"
   },
   "repository": {
     "type": "git",
