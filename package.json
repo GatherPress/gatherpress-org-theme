@@ -1,0 +1,27 @@
+{
+  "name": "gatherpress-org-theme",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GatherPress/gatherpress-org-theme.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/GatherPress/gatherpress-org-theme/issues"
+  },
+  "homepage": "https://github.com/GatherPress/gatherpress-org-theme#readme",
+  "devDependencies": {
+    "@wordpress/scripts": "^31.8.0",
+    "webpack-remove-empty-scripts": "^1.1.1"
+  }
+}

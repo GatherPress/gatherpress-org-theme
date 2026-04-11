@@ -12,20 +12,44 @@
 
 require_once get_template_directory() . '/inc/custom-post-type.php';
 
-// Enqueue Custom JS Files
-function gatherpress_enqueue_custom_js() {
+// Enqueue built assets from src/ via @wordpress/scripts.
+function gatherpress_enqueue_build_assets() {
+    $build_dir = get_template_directory() . '/build';
+    $build_uri = get_template_directory_uri() . '/build';
 
-    // custom-comment-form.js
-    wp_enqueue_script(
-        'custom-comment-form-js',
-        get_template_directory_uri() . '/assets/js/custom-comment-form.js',
+    // Theme stylesheet (compiled from src/scss/).
+    wp_enqueue_style(
+        'gatherpress-theme-style',
+        $build_uri . '/style-style.css',
         array(),
-        filemtime( get_template_directory() . '/assets/js/custom-comment-form.js' ),
+        filemtime( $build_dir . '/style-style.css' )
+    );
+
+    // Custom comment form JS.
+    $comment_asset_file = $build_dir . '/js/custom-comment-form.asset.php';
+    $comment_asset       = file_exists( $comment_asset_file ) ? require $comment_asset_file : array( 'dependencies' => array(), 'version' => false );
+
+    wp_enqueue_script(
+        'gatherpress-custom-comment-form',
+        $build_uri . '/js/custom-comment-form.js',
+        $comment_asset['dependencies'],
+        $comment_asset['version'],
         true
     );
 
+    // Event search JS.
+    $search_asset_file = $build_dir . '/js/event-search.asset.php';
+    $search_asset       = file_exists( $search_asset_file ) ? require $search_asset_file : array( 'dependencies' => array(), 'version' => false );
+
+    wp_enqueue_script(
+        'gatherpress-event-search',
+        $build_uri . '/js/event-search.js',
+        $search_asset['dependencies'],
+        $search_asset['version'],
+        true
+    );
 }
-add_action( 'wp_enqueue_scripts', 'gatherpress_enqueue_custom_js' );
+add_action( 'wp_enqueue_scripts', 'gatherpress_enqueue_build_assets' );
 
 
 // Adds theme support for post formats.
@@ -58,25 +82,6 @@ if ( ! function_exists( 'gatherpress_editor_style' ) ) :
 endif;
 add_action( 'after_setup_theme', 'gatherpress_editor_style' );
 
-// Enqueues style.css on the front.
-if ( ! function_exists( 'gatherpress_enqueue_styles' ) ) :
-	/**
-	 * Enqueues style.css on the front.
-	 *
-	 * @since Gather-Press 1.0
-	 *
-	 * @return void
-	 */
-	function gatherpress_enqueue_styles() {
-		wp_enqueue_style(
-			'gatherpress-style',
-			get_parent_theme_file_uri( 'style.css' ),
-			array(),
-			wp_get_theme()->get( 'Version' )
-		);
-	}
-endif;
-add_action( 'wp_enqueue_scripts', 'gatherpress_enqueue_styles' );
 
 // Registers custom block styles.
 if ( ! function_exists( 'gatherpress_block_styles' ) ) :

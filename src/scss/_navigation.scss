@@ -1,0 +1,86 @@
+@use "variables" as *;
+
+// Increase the bottom margin on submenus so the outline is visible.
+.wp-block-navigation .wp-block-navigation-submenu .wp-block-navigation-item:not(:last-child) {
+	margin-bottom: 3px;
+}
+
+// Increase the outline offset on parent menu items so the outline doesn't touch the text.
+.wp-block-navigation .wp-block-navigation-item .wp-block-navigation-item__content {
+	outline-offset: 4px;
+}
+
+// Remove outline offset from submenus to keep outline inside the container.
+.wp-block-navigation .wp-block-navigation-item ul.wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+	outline-offset: 0;
+}
+
+// Replace submenu arrow with "+" icon
+.wp-block-navigation__submenu-icon,
+.wp-block-navigation-submenu__toggle::after {
+	content: "+";
+	font-size: 18px;
+	display: inline-block;
+	transform: none;
+}
+
+.wp-block-navigation__submenu-icon svg,
+.wp-block-navigation-submenu__toggle svg {
+	display: none !important;
+}
+
+.wp-block-navigation a:focus {
+	outline: none !important;
+}
+
+// Responsive navigation toggle
+@media (min-width: 1025px) {
+	.wp-block-navigation__responsive-container-open:not(.always-shown) {
+		display: none !important;
+	}
+}
+
+@media (max-width: $breakpoint-md) {
+	.wp-block-navigation__responsive-container-open:not(.always-shown) {
+		display: block !important;
+	}
+}
+
+@media (min-width: 770px) {
+	.wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) {
+		background-color: inherit;
+		display: block !important;
+		position: relative;
+		width: 100%;
+		z-index: auto;
+	}
+}
+
+@media (max-width: $breakpoint-md) {
+	.wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) {
+		background-color: inherit;
+		display: none !important;
+		position: relative;
+		width: 100%;
+		z-index: auto;
+	}
+}
+
+// Header login toggle (desktop vs. mobile)
+.header-login {
+	display: none !important;
+}
+
+.header-login-mobile {
+	display: block !important;
+}
+
+@media (max-width: $breakpoint-md) {
+	.header-login {
+		display: block !important;
+	}
+
+	.header-login-mobile {
+		display: none !important;
+	}
+}

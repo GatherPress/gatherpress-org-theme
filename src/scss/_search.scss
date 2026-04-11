@@ -1,0 +1,34 @@
+@use "variables" as *;
+
+// Force search block into content-width container
+.wp-block-search {
+	max-width: 1320px !important;
+	display: block !important;
+	text-align: left !important;
+}
+
+.wp-block-search__inside-wrapper {
+	max-width: 402px !important;
+	margin-left: 0 !important;
+	margin-right: auto !important;
+	justify-content: flex-start !important;
+	border: 1px solid #c2c5e1 !important;
+}
+
+.wp-block-search__input {
+	text-align: left !important;
+	flex: 1 1 auto !important;
+	color: rgba(144, 150, 178, 0.42) !important;
+}
+
+.wp-block-search__button {
+	flex: 0 0 auto !important;
+	background-color: $color-white !important;
+	color: #c2c5e1 !important;
+}
+
+.wp-block-search__label {
+	color: $color-primary !important;
+	font-weight: 600;
+	font-size: 22px;
+}

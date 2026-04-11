@@ -1,0 +1,261 @@
+@use "variables" as *;
+
+// -----------------------------------------------
+// Play button with pulse animation
+// -----------------------------------------------
+.play-btn {
+	position: relative;
+	display: inline-block;
+
+	// Outer pulsing ring
+	&::before {
+		content: "";
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 100px;
+		height: 100px;
+		background: $color-white;
+		border-radius: 50%;
+		transform: translate(-50%, -50%);
+		box-shadow: $shadow-card;
+		animation: pulse-shadow 2.5s ease-out infinite;
+		z-index: 0;
+	}
+
+	// Inner solid circle
+	&::after {
+		content: "";
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 96px;
+		height: 96px;
+		background: $color-white;
+		border-radius: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 1;
+	}
+
+	// Play icon image
+	img {
+		position: relative;
+		z-index: 2;
+		border-radius: 50%;
+	}
+
+	@media (max-width: $breakpoint-sm) {
+		&::before {
+			width: 90px;
+			height: 90px;
+		}
+
+		&::after {
+			width: 80px;
+			height: 80px;
+		}
+
+		img {
+			width: 40px;
+			height: 40px;
+		}
+	}
+}
+
+@keyframes pulse-shadow {
+	0% {
+		transform: translate(-50%, -50%) scale(1);
+		box-shadow: $shadow-card;
+		opacity: 1;
+	}
+
+	70% {
+		transform: translate(-50%, -50%) scale(1.35);
+		box-shadow: $shadow-card;
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+// -----------------------------------------------
+// Mission border heading
+// -----------------------------------------------
+.mission-border {
+	border-bottom: 12px solid;
+	border-image-slice: 1;
+	border-image-source: linear-gradient(90deg, $color-accent 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.wp-block-heading.mission-border {
+	position: relative;
+	display: inline-block;
+	padding-bottom: 1px !important;
+	margin-bottom: 0 !important;
+}
+
+// Our mission column layout
+.our-mission-col {
+	position: relative;
+
+	.is-style-style-7 {
+		position: absolute;
+		bottom: -15px;
+		left: 20px;
+		z-index: 100;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 30px;
+		left: 0;
+		background: url("../../assets/images/our-mission.svg") no-repeat left top;
+		background-size: contain;
+		width: 326px;
+		height: 216px;
+		display: block;
+		z-index: 1;
+		pointer-events: none;
+	}
+}
+
+// -----------------------------------------------
+// Tags
+// -----------------------------------------------
+.wp-block-post-terms.taxonomy-post_tag {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+
+	a {
+		background: $color-accent;
+		padding: 6px 14px;
+		border-radius: 8px;
+		text-decoration: none;
+		color: #000;
+	}
+
+	// Remove commas between tags
+	span {
+		display: none;
+	}
+}
+
+// -----------------------------------------------
+// External link icon
+// -----------------------------------------------
+a:has(.anww-external-link-icon) {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.anww-external-link-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 26px;
+	height: 26px;
+	font-size: 0;
+	line-height: 1;
+	flex-shrink: 0;
+
+	&::before {
+		content: "";
+		display: block;
+		width: 26px;
+		height: 26px;
+		background-color: currentcolor;
+		mask: url("https://gatherpress.org/wp-content/uploads/2025/12/outbound-2.svg") no-repeat center;
+		-webkit-mask: url("https://gatherpress.org/wp-content/uploads/2025/12/outbound-2.svg") no-repeat center;
+		mask-size: contain;
+		-webkit-mask-size: contain;
+	}
+}
+
+.hide-external-icon .anww-external-link-icon {
+	display: none !important;
+}
+
+// -----------------------------------------------
+// Image block overrides
+// -----------------------------------------------
+.wp-block-image a .anww-external-link-icon {
+	display: none !important;
+}
+
+.wp-block-image a {
+	&:hover,
+	&:focus,
+	&:active,
+	&:focus-within,
+	&:focus-visible,
+	&:target {
+		border: none;
+		outline: none;
+		box-shadow: none;
+	}
+}
+
+// Hide card arrow image inside links
+a img.card-arrow {
+	display: none;
+}
+
+// -----------------------------------------------
+// Social icons
+// -----------------------------------------------
+.social-icon svg {
+	border: 1px solid $color-white;
+	border-radius: 4px;
+	padding: 6px;
+}
+
+// -----------------------------------------------
+// Misc utility classes
+// -----------------------------------------------
+.team {
+	color: $color-white;
+}
+
+.topic a {
+	text-decoration: none;
+}
+
+.attend {
+	color: $color-link-dark;
+}
+
+.mark {
+	background-color: black;
+}
+
+.read-more a strong mark {
+	background-color: $color-white !important;
+}
+
+.is-style-default-name {
+	justify-content: left;
+	text-decoration: none;
+	width: 179px;
+	height: 30px;
+}
+
+.documentation a {
+	text-decoration: none;
+}
+
+.last-image {
+	width: 218px;
+	height: 210px;
+	padding-right: 400px;
+	top: 400px;
+	align-items: left;
+}
+
+.goal-pattern-image {
+	margin-top: -70px !important;
+}
