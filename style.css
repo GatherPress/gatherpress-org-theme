@@ -1,9 +1,9 @@
 /*
 Theme Name: GatherPress
 Theme URI: https://wordpress.org/themes/gatherpress/
-Author: GatherPress team
+Author: GatherPress
 Author URI: https://wordpress.org
-Description: Gather-Press emphasizes simplicity and adaptability. It offers flexible design options, supported by a variety of patterns for different page types, such as services and landing pages, making it ideal for building personal blogs, professional portfolios, online magazines, or business websites. Its templates cater to various blog styles, from text-focused to image-heavy layouts. Additionally, it supports international typography and diverse color palettes, ensuring accessibility and customization for users worldwide.
+Description: GatherPress emphasizes simplicity and adaptability. It offers flexible design options, supported by a variety of patterns for different page types, such as services and landing pages, making it ideal for building personal blogs, professional portfolios, online magazines, or business websites. Its templates cater to various blog styles, from text-focused to image-heavy layouts. Additionally, it supports international typography and diverse color palettes, ensuring accessibility and customization for users worldwide.
 Requires at least: 6.7
 Tested up to: 6.8
 Requires PHP: 7.2
@@ -241,7 +241,7 @@ p {
 	width: 179px;
 	height: 30px;
 }
-  
+
 .team {
 	color: white;
 }
@@ -1097,7 +1097,7 @@ display:none;}
 .single-gatherpress_event .wp-block-gatherpress-rsvp-response .wp-block-gatherpress-icon::after {
     content: "";
     position: absolute;
-    padding-right:10px; 
+    padding-right:10px;
     transform: initial !important;
     width: 18px;
     height: 18px;
@@ -1136,8 +1136,8 @@ display:none;}
     width: 54px;
     height: 54px;
     border-radius: 50%;
-    
-    
+
+
 }
 .wp-block-group.gatherpress--rsvp-responses.is-layout-grid {
     row-gap: 37px;
@@ -1162,7 +1162,7 @@ text-decoration:none;
 font-weight: 600 !important;
 font-size: 22px !important;
 color:#238EE3 !important;
-} 
+}
 
 @media (max-width: 769px) {
     .home-img {
@@ -1224,20 +1224,20 @@ element.style {
 @media (max-width: 769px) {
 .gatherpress-team-wrapper .wp-container-core-columns-is-layout-5d5d5bba {
     flex-wrap: nowrap !important;
-    
+
 }
 }
 
 @media (max-width: 576px) {
 .gatherpress-team-wrapper .wp-container-core-columns-is-layout-5d5d5bba {
     flex-wrap:wrap !important;
-    
+
 }
 }
 
 .hide-external-icon .anww-external-link-icon {
    display:none !important;
-} 
+}
 
 
 
@@ -1308,7 +1308,7 @@ element.style {
         display: grid !important;
         grid-template-columns: repeat(3, 1fr) !important;
     }
-	
+
 	.footer-col-outer .footer-col .footer-about-col{
 		text-align:center !important;
 	}
@@ -1318,10 +1318,10 @@ element.style {
 
 @media (max-width: 576px) {
     .footer-col-outer .footer-col {
-        
+
         grid-template-columns:1fr !important;
     }
-	
+
 	.footer-col-outer .footer-col .footer-about-col{
 		text-align:left !important;
 	}
@@ -1382,7 +1382,7 @@ element.style {
   }
   70% {
     transform: translate(-50%, -50%) scale(1.35);
-   
+
     opacity: 0;
 box-shadow: 0px 7px 29px 0px #64646F33;
 
@@ -1420,7 +1420,7 @@ color:#238EE3 !important;
 
    @media (max-width: 768px) {
     .single-gatherpress_event .wp-block-gatherpress-rsvp-response .is-layout-grid {
-     grid-template-columns: repeat(4, 1fr) !important; 
+     grid-template-columns: repeat(4, 1fr) !important;
     }
 }
 

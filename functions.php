@@ -15,22 +15,7 @@ require_once get_template_directory() . '/inc/custom-post-type.php';
 // Enqueue Custom JS Files
 function gatherpress_enqueue_custom_js() {
 
-    // 1. custom-signup.js  (needs AJAX URL + nonce)
-    wp_enqueue_script(
-        'custom-signup-js',
-        get_template_directory_uri() . '/assets/js/custom-signup.js',
-        array(), 
-        filemtime( get_template_directory() . '/assets/js/custom-signup.js' ),
-        true
-    );
-
-    // Pass PHP variables to JS
-    wp_localize_script( 'custom-signup-js', 'signupData', array(
-        'ajax_url' => admin_url( 'admin-ajax.php' ),
-        'nonce'    => wp_create_nonce( 'custom-signup-nonce' )
-    ) );
-
-    // 2. custom-comment-form.js
+    // custom-comment-form.js
     wp_enqueue_script(
         'custom-comment-form-js',
         get_template_directory_uri() . '/assets/js/custom-comment-form.js',
