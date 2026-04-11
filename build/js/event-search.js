@@ -1,1 +1,0 @@
-document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll("form.search-event").forEach(function(e){if(!e.querySelector('input[name="type"]')){const n=document.createElement("input");n.type="hidden",n.name="type",n.value="event",e.appendChild(n)}})});

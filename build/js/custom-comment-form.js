@@ -1,1 +1,0 @@
-document.addEventListener("DOMContentLoaded",()=>{const t=document.getElementById("cf_comments"),e=document.getElementById("char_count");t&&e&&t.addEventListener("input",()=>{const n=t.value.length;e.textContent=`${n} Of 500 Max Characters`})});
