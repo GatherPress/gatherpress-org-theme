@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Centered footer
- * Slug: gatherpress/footer-centered
+ * Slug: gatherpress-org-theme/footer-centered
  * Categories: footer
  * Block Types: core/template-part/footer
  * Description: Footer with centered site title and tagline.
@@ -30,8 +30,8 @@
 		<?php
 		printf(
 			/* translators: Designed with WordPress. %s: WordPress link. */
-			esc_html__( 'Designed with %s', 'gatherpress' ),
-			'<a href="' . esc_url( __( 'https://wordpress.org', 'gatherpress' ) ) . '" rel="nofollow">WordPress</a>'
+			esc_html__( 'Designed with %s', 'gatherpress-org-theme' ),
+			'<a href="' . esc_url( __( 'https://wordpress.org', 'gatherpress-org-theme' ) ) . '" rel="nofollow">WordPress</a>'
 		);
 		?>
 	</p>

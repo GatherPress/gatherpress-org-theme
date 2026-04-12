@@ -1,22 +1,5 @@
 @use "variables" as *;
 
-// Override block padding set by theme.json or block editor
-.wp-block[data-type],
-.wp-block {
-	padding-top: 0 !important;
-	padding-bottom: 0 !important;
-}
-
-[data-style*="--wp--preset--spacing--30"] {
-	padding-top: 0 !important;
-	padding-bottom: 0 !important;
-}
-
-// Card style
-.git {
-	border-color: $color-border;
-	box-shadow: $shadow-card;
-}
 
 // Footer columns
 .footer-col {
@@ -62,35 +45,14 @@
 	}
 }
 
-// News updates section
-.news-updates-left-img img {
-	height: 400px;
-	width: 100%;
-	object-fit: cover;
-}
-
-@media (max-width: 567px) {
-	.news-updates-right-col .wp-block-group {
-		flex-wrap: wrap;
-
-		.wp-block-group {
-			width: 100%;
-		}
-	}
-
-	.news-update-outer .wp-block-group .wp-block-group {
-		width: initial !important;
-	}
-}
-
 // Responsive grid
-@media (max-width: 768px) {
+@media (max-width: $breakpoint-md) {
 	.is-layout-grid {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 }
 
-// New-updates section wrap at 900px
+// Column wrap at large breakpoint
 @media (max-width: $breakpoint-lg) {
 	.new-updates-row {
 		flex-wrap: wrap !important;
@@ -99,35 +61,5 @@
 	.wp-block-column {
 		flex-grow: 0 !important;
 		flex-basis: 100% !important;
-	}
-}
-
-// Releases version cards
-@media (max-width: $breakpoint-xl) {
-	.releases-version-cards {
-		min-height: 550px !important;
-	}
-}
-
-// Home image responsive
-.home-img {
-	@media (max-width: $breakpoint-md) {
-		min-height: 350px !important;
-	}
-
-	@media (max-width: $breakpoint-sm) {
-		min-height: 100px !important;
-	}
-
-	@media (max-width: $breakpoint-xs) {
-		min-height: 210px !important;
-	}
-
-	@media (max-width: $breakpoint-xxs) {
-		min-height: 188px !important;
-	}
-
-	@media (max-width: $breakpoint-xxxs) {
-		min-height: 155px !important;
 	}
 }

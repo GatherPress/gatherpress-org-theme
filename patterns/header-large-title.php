@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Header with large title
- * Slug: gatherpress/header-large-title
+ * Slug: gatherpress-org-theme/header-large-title
  * Categories: header
  * Block Types: core/template-part/header
  * Description: Site header with large site title and right-aligned navigation.

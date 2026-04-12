@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Event page pattern 
- * Slug: gatherpress/event-page
+ * Slug: gatherpress-org-theme/event-page
  * Categories: banner
  * Description: Event pattern in gatherpress.
  *

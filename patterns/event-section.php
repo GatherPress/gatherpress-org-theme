@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Banner Of event-section 
- * Slug: gatherpress/event-section
+ * Slug: gatherpress-org-theme/event-section
  * Categories: banner
  * Description: Banner of event upcoming with details.
  *

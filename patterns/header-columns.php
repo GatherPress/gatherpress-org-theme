@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Header with columns
- * Slug: gatherpress/header-columns
+ * Slug: gatherpress-org-theme/header-columns
  * Categories: header
  * Block Types: core/template-part/header
  * Description: Site header with site title and navigation in columns.

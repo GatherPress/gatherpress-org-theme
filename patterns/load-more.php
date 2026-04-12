@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Banner Of load-more 
- * Slug: gatherpress/load-more
+ * Slug: gatherpress-org-theme/load-more
  * Categories: banner
  * Description: Banner of load-momre in upcoming event with preview.
  *

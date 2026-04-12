@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Centered site header
- * Slug: gatherpress/header-centered
+ * Slug: gatherpress-org-theme/header-centered
  * Categories: header
  * Block Types: core/template-part/header
  * Description: Site header with centered site title and navigation.

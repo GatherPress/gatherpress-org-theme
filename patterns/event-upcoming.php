@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Event Upcoming Section
- * Slug: gatherpress/event-upcoming
+ * Slug: gatherpress-org-theme/event-upcoming
  * Categories: pages
  * Description: Event section with description and accompanying image.
  *

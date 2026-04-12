@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Vertical site header
- * Slug: gatherpress/vertical-header
+ * Slug: gatherpress-org-theme/vertical-header
  * Categories: header
  * Block Types: core/template-part/vertical-header
  * Description: Vertical site header with site title and navigation.

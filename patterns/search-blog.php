@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Search Blog
- * Slug: gatherpress/search-blog
+ * Slug: gatherpress-org-theme/search-blog
  * Categories: banner
  * Description: Search blog pattern.
  *

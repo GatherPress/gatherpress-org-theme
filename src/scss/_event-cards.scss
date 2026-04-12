@@ -1,0 +1,120 @@
+@use "variables" as *;
+
+// -----------------------------------------------
+// Event cards
+// -----------------------------------------------
+.event-card {
+	background-color: var(--wp--preset--color--base);
+	border-radius: $radius-lg;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+	overflow: hidden;
+	transition: transform $transition-base, box-shadow $transition-base;
+
+	&:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+	}
+}
+
+.event-card__image {
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+}
+
+.event-card__content {
+	padding: 20px;
+}
+
+// Date badge
+.event-card__date {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: var(--wp--preset--color--accent);
+	color: var(--wp--preset--color--base);
+	border-radius: $radius-sm;
+	padding: 8px 14px;
+	font-weight: 700;
+	line-height: 1.2;
+	text-transform: uppercase;
+
+	.event-card__date-month {
+		font-size: 12px;
+		letter-spacing: 0.05em;
+	}
+
+	.event-card__date-day {
+		font-size: 22px;
+	}
+}
+
+// Title
+.event-card__title {
+	margin: 12px 0 8px;
+	font-size: 18px;
+	font-weight: 700;
+	color: var(--wp--preset--color--contrast);
+
+	a {
+		text-decoration: none;
+		color: inherit;
+
+		&:hover {
+			color: var(--wp--preset--color--accent);
+		}
+	}
+}
+
+// Venue / online indicator
+.event-card__venue {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 14px;
+	color: var(--wp--preset--color--contrast-muted);
+	margin-bottom: 8px;
+
+	&::before {
+		content: "";
+		display: inline-block;
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		background-color: var(--wp--preset--color--accent);
+		flex-shrink: 0;
+	}
+}
+
+.event-card__venue--online::before {
+	background-color: #22c55e;
+}
+
+// Event meta (time, attendee count, etc.)
+.event-card__meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+	font-size: 13px;
+	color: var(--wp--preset--color--contrast-muted);
+	padding-top: 12px;
+	border-top: 1px solid var(--wp--preset--color--border);
+	margin-top: 12px;
+}
+
+.event-card__meta-item {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+}
+
+// Responsive grid for event cards
+.event-cards-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 24px;
+
+	@media (max-width: $breakpoint-sm) {
+		grid-template-columns: 1fr;
+	}
+}

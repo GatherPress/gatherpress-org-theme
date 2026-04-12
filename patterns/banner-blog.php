@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Blog Pattern
- * Slug: gatherpress/banner-blog
+ * Slug: gatherpress-org-theme/banner-blog
  * Categories: banner
  * Description: banner of blog pattern.
  *

@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Event Section
- * Slug: gatherpress/event
+ * Slug: gatherpress-org-theme/event
  * Categories: banner
  * Description: A section showcashing featured upcoming events with images, categories, dates, and organizers.
  *

@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Footer with columns
- * Slug: gatherpress/footer-columns
+ * Slug: gatherpress-org-theme/footer-columns
  * Categories: footer
  * Block Types: core/template-part/footer
  * Description: Footer columns with title, tagline and links.
@@ -30,26 +30,26 @@
 				<!-- wp:group {"style":{"spacing":{"padding":{"right":"0","left":"0"}}},"layout":{"type":"constrained"}} -->
 				<div class="wp-block-group" style="padding-right:0;padding-left:0">
 					<!-- wp:heading {"level":3,"style":{"typography":{"fontStyle":"normal","fontWeight":"700"}},"fontSize":"medium"} -->
-					<h3 class="wp-block-heading has-medium-font-size" style="font-style:normal;font-weight:700"><?php esc_html_e( 'Stories', 'gatherpress' ); ?></h3>
+					<h3 class="wp-block-heading has-medium-font-size" style="font-style:normal;font-weight:700"><?php esc_html_e( 'Stories', 'gatherpress-org-theme' ); ?></h3>
 					<!-- /wp:heading -->
-					<!-- wp:navigation {"overlayMenu":"never","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"fontSize":"medium","layout":{"type":"flex","orientation":"vertical"},"ariaLabel":"<?php esc_attr_e( 'Stories', 'gatherpress' ); ?>"} -->
-						<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Blog', 'gatherpress' ); ?>","url":"#"} /-->
-						<!-- wp:navigation-link {"label":"<?php esc_html_e( 'About', 'gatherpress' ); ?>","url":"#"} /-->
-						<!-- wp:navigation-link {"label":"<?php esc_html_e( 'FAQs', 'gatherpress' ); ?>","url":"#"} /-->
-						<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Authors', 'gatherpress' ); ?>","url":"#"} /-->
+					<!-- wp:navigation {"overlayMenu":"never","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"fontSize":"medium","layout":{"type":"flex","orientation":"vertical"},"ariaLabel":"<?php esc_attr_e( 'Stories', 'gatherpress-org-theme' ); ?>"} -->
+						<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Blog', 'gatherpress-org-theme' ); ?>","url":"#"} /-->
+						<!-- wp:navigation-link {"label":"<?php esc_html_e( 'About', 'gatherpress-org-theme' ); ?>","url":"#"} /-->
+						<!-- wp:navigation-link {"label":"<?php esc_html_e( 'FAQs', 'gatherpress-org-theme' ); ?>","url":"#"} /-->
+						<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Authors', 'gatherpress-org-theme' ); ?>","url":"#"} /-->
 					<!-- /wp:navigation -->
 				</div>
 				<!-- /wp:group -->
 				<!-- wp:group {"style":{"spacing":{"padding":{"right":"0","left":"0"}}},"layout":{"type":"constrained"}} -->
 				<div class="wp-block-group" style="padding-right:0;padding-left:0">
 					<!-- wp:heading {"level":3,"style":{"typography":{"fontStyle":"normal","fontWeight":"700"}},"fontSize":"medium"} -->
-					<h3 class="wp-block-heading has-medium-font-size" style="font-style:normal;font-weight:700"><?php echo esc_html_x( 'Fleurs', 'Example brand name.', 'gatherpress' ); ?></h3>
+					<h3 class="wp-block-heading has-medium-font-size" style="font-style:normal;font-weight:700"><?php echo esc_html_x( 'Fleurs', 'Example brand name.', 'gatherpress-org-theme' ); ?></h3>
 					<!-- /wp:heading -->
-					<!-- wp:navigation {"overlayMenu":"never","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"fontSize":"medium","layout":{"type":"flex","orientation":"vertical"},"ariaLabel":"<?php esc_attr_e( 'Featured', 'gatherpress' ); ?>"} -->
-						<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Events', 'gatherpress' ); ?>","url":"#"} /-->
-						<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Shop', 'gatherpress' ); ?>","url":"#"} /-->
-						<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Patterns', 'gatherpress' ); ?>","url":"#"} /-->
-						<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Themes', 'gatherpress' ); ?>","url":"#"} /-->
+					<!-- wp:navigation {"overlayMenu":"never","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"fontSize":"medium","layout":{"type":"flex","orientation":"vertical"},"ariaLabel":"<?php esc_attr_e( 'Featured', 'gatherpress-org-theme' ); ?>"} -->
+						<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Events', 'gatherpress-org-theme' ); ?>","url":"#"} /-->
+						<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Shop', 'gatherpress-org-theme' ); ?>","url":"#"} /-->
+						<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Patterns', 'gatherpress-org-theme' ); ?>","url":"#"} /-->
+						<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Themes', 'gatherpress-org-theme' ); ?>","url":"#"} /-->
 					<!-- /wp:navigation -->
 				</div>
 				<!-- /wp:group -->
@@ -63,15 +63,15 @@
 		<!-- wp:group {"align":"full","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
 		<div class="wp-block-group alignfull">
 			<!-- wp:paragraph {"fontSize":"small"} -->
-			<p class="has-small-font-size"><?php esc_html_e( 'Gather-Press', 'gatherpress' ); ?></p>
+			<p class="has-small-font-size"><?php esc_html_e( 'Gather-Press', 'gatherpress-org-theme' ); ?></p>
 			<!-- /wp:paragraph -->
 			<!-- wp:paragraph {"fontSize":"small"} -->
 			<p class="has-small-font-size">
 			<?php
 			printf(
 				/* translators: Designed with WordPress. %s: WordPress link. */
-				esc_html__( 'Designed with %s', 'gatherpress' ),
-				'<a href="' . esc_url( __( 'https://wordpress.org', 'gatherpress' ) ) . '" rel="nofollow">WordPress</a>'
+				esc_html__( 'Designed with %s', 'gatherpress-org-theme' ),
+				'<a href="' . esc_url( __( 'https://wordpress.org', 'gatherpress-org-theme' ) ) . '" rel="nofollow">WordPress</a>'
 			);
 			?>
 			</p>
