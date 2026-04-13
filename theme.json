@@ -318,11 +318,6 @@
 		},
 		{
 			"area": "header",
-			"name": "vertical-header",
-			"title": "Vertical site header"
-		},
-		{
-			"area": "header",
 			"name": "header-large-title",
 			"title": "Header with large title"
 		},
