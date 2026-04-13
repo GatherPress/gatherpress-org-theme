@@ -71,7 +71,7 @@ class Setup {
 	}
 
 	/**
-	 * Check if GatherPress block suppression is enabled.
+	 * Check if GatherPress block suppression is enabled for events.
 	 *
 	 * @return bool
 	 */
@@ -84,9 +84,35 @@ class Setup {
 	}
 
 	/**
-	 * Remove default GatherPress blocks from the event post type template.
+	 * Check if the blank venue editor setting is enabled.
 	 *
-	 * When enabled, new events start with a blank editor instead of
+	 * @return bool
+	 */
+	protected function is_blank_venue_editor(): bool {
+		if ( ! class_exists( '\GatherPress\Core\Settings' ) ) {
+			return false;
+		}
+
+		return (bool) \GatherPress\Core\Settings::get_instance()->get( 'blank_venue_editor' );
+	}
+
+	/**
+	 * Check if GatherPress block suppression is enabled for venues.
+	 *
+	 * @return bool
+	 */
+	protected function is_suppress_gatherpress_venue_blocks(): bool {
+		if ( ! class_exists( '\GatherPress\Core\Settings' ) ) {
+			return false;
+		}
+
+		return (bool) \GatherPress\Core\Settings::get_instance()->get( 'suppress_gatherpress_venue_blocks' );
+	}
+
+	/**
+	 * Remove default GatherPress blocks from event or venue post type templates.
+	 *
+	 * When enabled, new events/venues start with a blank editor instead of
 	 * the default GatherPress block template.
 	 *
 	 * @param array  $args      Post type registration arguments.
@@ -94,24 +120,22 @@ class Setup {
 	 * @return array Modified arguments.
 	 */
 	public function maybe_clear_event_template( array $args, string $post_type ): array {
-		if ( 'gatherpress_event' !== $post_type ) {
-			return $args;
+		if ( 'gatherpress_event' === $post_type && $this->is_blank_event_editor() ) {
+			$args['template'] = array();
 		}
 
-		if ( ! $this->is_blank_event_editor() ) {
-			return $args;
+		if ( 'gatherpress_venue' === $post_type && $this->is_blank_venue_editor() ) {
+			$args['template'] = array();
 		}
-
-		$args['template'] = array();
 
 		return $args;
 	}
 
 	/**
-	 * Remove GatherPress blocks from event post content.
+	 * Remove GatherPress blocks from event or venue post content.
 	 *
 	 * When enabled, strips any block with a 'gatherpress/' namespace from
-	 * the post content so that FSE templates control the event layout.
+	 * the post content so that FSE templates control the layout.
 	 * Only affects the post content — blocks placed in FSE templates
 	 * are not touched.
 	 *
@@ -119,11 +143,17 @@ class Setup {
 	 * @return string Modified content with GatherPress blocks removed.
 	 */
 	public function maybe_remove_gatherpress_blocks_from_content( string $content ): string {
-		if ( ! is_singular( 'gatherpress_event' ) ) {
-			return $content;
+		$should_suppress = false;
+
+		if ( is_singular( 'gatherpress_event' ) && $this->is_suppress_gatherpress_blocks() ) {
+			$should_suppress = true;
 		}
 
-		if ( ! $this->is_suppress_gatherpress_blocks() ) {
+		if ( is_singular( 'gatherpress_venue' ) && $this->is_suppress_gatherpress_venue_blocks() ) {
+			$should_suppress = true;
+		}
+
+		if ( ! $should_suppress ) {
 			return $content;
 		}
 

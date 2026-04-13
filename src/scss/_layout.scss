@@ -1,5 +1,9 @@
 @use "variables" as *;
 
+// Remove default block gap above footer.
+:where(.wp-site-blocks) > footer {
+	margin-block-start: 0;
+}
 
 // Footer columns
 .footer-col {

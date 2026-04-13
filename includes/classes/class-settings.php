@@ -80,6 +80,36 @@ class Settings {
 						),
 					),
 				),
+				'venues' => array(
+					'name'        => __( 'Venues', 'gatherpress-org-theme' ),
+					'description' => __( 'Control how GatherPress venue content is handled.', 'gatherpress-org-theme' ),
+					'options'     => array(
+						'blank_venue_editor' => array(
+							'labels' => array(
+								'name' => __( 'Blank Venue Editor', 'gatherpress-org-theme' ),
+							),
+							'field'  => array(
+								'label'   => __( 'New venues start with a blank editor instead of pre-filled GatherPress blocks.', 'gatherpress-org-theme' ),
+								'type'    => 'checkbox',
+								'options' => array(
+									'default' => true,
+								),
+							),
+						),
+						'suppress_gatherpress_venue_blocks' => array(
+							'labels' => array(
+								'name' => __( 'Suppress GatherPress Blocks', 'gatherpress-org-theme' ),
+							),
+							'field'  => array(
+								'label'   => __( 'GatherPress blocks will not render in the venue content on the front end. Use FSE templates to control the venue layout instead.', 'gatherpress-org-theme' ),
+								'type'    => 'checkbox',
+								'options' => array(
+									'default' => true,
+								),
+							),
+						),
+					),
+				),
 			),
 		);
 
