@@ -182,24 +182,24 @@
 			],
 			"fontFamilies": [
 				{
-					"name": "Inter",
-					"slug": "inter",
-					"fontFamily": "Inter, sans-serif",
+					"name": "Plus Jakarta Sans",
+					"slug": "plus-jakarta-sans",
+					"fontFamily": "'Plus Jakarta Sans', sans-serif",
 					"fontFace": [
 						{
-							"fontFamily": "Inter",
-							"fontWeight": "100 900",
+							"fontFamily": "Plus Jakarta Sans",
+							"fontWeight": "200 800",
 							"fontStyle": "normal",
 							"src": [
-								"file:./assets/fonts/Inter/InterVariable.woff2"
+								"file:./assets/fonts/PlusJakartaSans/PlusJakartaSans-Variable.woff2"
 							]
 						},
 						{
-							"fontFamily": "Inter",
-							"fontWeight": "100 900",
+							"fontFamily": "Plus Jakarta Sans",
+							"fontWeight": "200 800",
 							"fontStyle": "italic",
 							"src": [
-								"file:./assets/fonts/Inter/InterVariable-Italic.woff2"
+								"file:./assets/fonts/PlusJakartaSans/PlusJakartaSans-Italic-Variable.woff2"
 							]
 						}
 					]
@@ -220,7 +220,7 @@
 			}
 		},
 		"typography": {
-			"fontFamily": "var:preset|font-family|inter",
+			"fontFamily": "var:preset|font-family|plus-jakarta-sans",
 			"fontSize": "var:preset|font-size|base",
 			"lineHeight": "1.6",
 			"fontWeight": "400"
@@ -254,7 +254,7 @@
 					"text": "var:preset|color|contrast"
 				},
 				"typography": {
-					"fontFamily": "var:preset|font-family|inter",
+					"fontFamily": "var:preset|font-family|plus-jakarta-sans",
 					"fontWeight": "700"
 				}
 			},
