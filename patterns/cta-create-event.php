@@ -23,10 +23,6 @@ $community_image = esc_url( get_theme_file_uri( 'assets/images/community.jpg' ) 
 <p class="has-base-color has-text-color has-link-color has-md-font-size" style="margin-top:var(--wp--preset--spacing--md)"><?php esc_html_e( 'We bring people together through events that inspire, connect, and empower. Whether you are attending your first meetup or your hundredth, there is a place for you here.', 'gatherpress-org-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base","fontSize":"sm"} -->
-<p class="has-base-color has-text-color has-link-color has-sm-font-size"><?php esc_html_e( 'Browse our upcoming events below and RSVP to get started — no account needed.', 'gatherpress-org-theme' ); ?></p>
-<!-- /wp:paragraph -->
-
 <!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|lg"}}}} -->
 <div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--lg)"><!-- wp:button {"className":"is-style-outline","style":{"border":{"radius":"8px","width":"2px","color":"var:preset|color|base"},"color":{"text":"var:preset|color|base"},"typography":{"fontWeight":"600"},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}}} -->
 <div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-text-color has-link-color has-border-color wp-element-button" href="/about" style="border-color:var(--wp--preset--color--base);border-width:2px;border-radius:8px;color:var(--wp--preset--color--base);font-weight:600"><?php esc_html_e( 'Learn More', 'gatherpress-org-theme' ); ?></a></div>
