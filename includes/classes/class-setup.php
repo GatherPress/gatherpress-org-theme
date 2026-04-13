@@ -58,16 +58,29 @@ class Setup {
 	}
 
 	/**
-	 * Check if the FSE event template setting is enabled.
+	 * Check if the blank event editor setting is enabled.
 	 *
 	 * @return bool
 	 */
-	protected function is_fse_event_template_enabled(): bool {
+	protected function is_blank_event_editor(): bool {
 		if ( ! class_exists( '\GatherPress\Core\Settings' ) ) {
 			return false;
 		}
 
-		return (bool) \GatherPress\Core\Settings::get_instance()->get( 'use_fse_event_template' );
+		return (bool) \GatherPress\Core\Settings::get_instance()->get( 'blank_event_editor' );
+	}
+
+	/**
+	 * Check if GatherPress block suppression is enabled.
+	 *
+	 * @return bool
+	 */
+	protected function is_suppress_gatherpress_blocks(): bool {
+		if ( ! class_exists( '\GatherPress\Core\Settings' ) ) {
+			return false;
+		}
+
+		return (bool) \GatherPress\Core\Settings::get_instance()->get( 'suppress_gatherpress_blocks' );
 	}
 
 	/**
@@ -85,7 +98,7 @@ class Setup {
 			return $args;
 		}
 
-		if ( ! $this->is_fse_event_template_enabled() ) {
+		if ( ! $this->is_blank_event_editor() ) {
 			return $args;
 		}
 
@@ -110,7 +123,7 @@ class Setup {
 			return $content;
 		}
 
-		if ( ! $this->is_fse_event_template_enabled() ) {
+		if ( ! $this->is_suppress_gatherpress_blocks() ) {
 			return $content;
 		}
 

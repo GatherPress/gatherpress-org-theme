@@ -1,8 +1,31 @@
 @use "variables" as *;
 
+// Submenu dropdown styling.
+.wp-block-navigation .wp-block-navigation__submenu-container {
+	border: 1px solid var(--wp--preset--color--border);
+	border-radius: $radius-md;
+	box-shadow: 0 4px 12px rgb(0 0 0 / 8%);
+	padding: var(--wp--preset--spacing--xs) 0;
+	margin-top: 8px !important;
+	min-width: 200px;
+	background: var(--wp--preset--color--base);
+}
+
+// Submenu items.
+.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+	padding: var(--wp--preset--spacing--xs) var(--wp--preset--spacing--md);
+	outline-offset: 0;
+	transition: background-color $transition-fast;
+
+	&:hover,
+	&:focus {
+		background-color: var(--wp--preset--color--base-alt);
+	}
+}
+
 // Increase the bottom margin on submenus so the outline is visible.
 .wp-block-navigation .wp-block-navigation-submenu .wp-block-navigation-item:not(:last-child) {
-	margin-bottom: 3px;
+	margin-bottom: 0;
 }
 
 // Increase the outline offset on parent menu items so the outline doesn't touch the text.
@@ -10,27 +33,125 @@
 	outline-offset: 4px;
 }
 
-// Remove outline offset from submenus to keep outline inside the container.
-.wp-block-navigation .wp-block-navigation-item ul.wp-block-navigation__submenu-container .wp-block-navigation-item__content {
-	outline-offset: 0;
+// Add breathing room between parent text and dropdown.
+// Uses an invisible ::before bridge on the submenu container
+// so the hover chain stays intact without misaligning nav items.
+.wp-block-navigation .wp-block-navigation__submenu-container::before {
+	content: "";
+	position: absolute;
+	top: -8px;
+	left: 0;
+	right: 0;
+	height: 8px;
 }
 
-// Replace submenu arrow with "+" icon
-.wp-block-navigation__submenu-icon,
-.wp-block-navigation-submenu__toggle::after {
-	content: "+";
-	font-size: 18px;
-	display: inline-block;
-	transform: none;
+// Replace default submenu SVG with animated CSS chevron (V ↔ ^).
+// Two bars meet at center, each pivots from its inner edge.
+// Both transform and top animate for smooth center-pivot effect.
+// Adapted from katzdigital.com.
+.wp-block-navigation__submenu-icon {
+	position: relative !important;
+	width: 16px !important;
+	height: 16px !important;
+	display: inline-block !important;
+
+	svg {
+		display: none !important;
+	}
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		width: 8px;
+		height: 2px;
+		background-color: currentColor;
+		top: 10px;
+		transition: transform $transition-slow, top $transition-slow;
+	}
+
+	// Left bar — pivots from its right (inner) edge. Origin stays fixed.
+	&::before {
+		right: 7px;
+		transform-origin: right center;
+		transform: rotate(45deg);
+	}
+
+	// Right bar — pivots from its left (inner) edge. Origin stays fixed.
+	&::after {
+		left: 8px;
+		transform-origin: left center;
+		transform: rotate(-45deg);
+	}
 }
 
-.wp-block-navigation__submenu-icon svg,
-.wp-block-navigation-submenu__toggle svg {
-	display: none !important;
+// Open state: flip rotation and shift bars up.
+// transform-origin stays fixed so the point never separates.
+// Hover (desktop, pure CSS) and aria-expanded (mobile toggle).
+.wp-block-navigation-submenu:hover > .wp-block-navigation__submenu-icon,
+button[aria-expanded="true"] > .wp-block-navigation__submenu-icon,
+button[aria-expanded="true"].wp-block-navigation__submenu-icon {
+
+	&::before {
+		top: 3px;
+		transform: rotate(-45deg);
+	}
+
+	&::after {
+		top: 3px;
+		transform: rotate(45deg);
+	}
 }
 
 .wp-block-navigation a:focus {
 	outline: none !important;
+}
+
+// Mobile responsive menu — stacked items with chevron toggle.
+.wp-block-navigation__responsive-container.is-menu-open {
+
+	// Parent items with submenus: row layout so chevron sits inline with text.
+	.wp-block-navigation-submenu {
+		flex-direction: row !important;
+		flex-wrap: wrap !important;
+		justify-content: center;
+
+		> .wp-block-navigation-item__content {
+			flex: 0 0 auto;
+		}
+
+		// Chevron button inline next to text.
+		> .wp-block-navigation-submenu__toggle {
+			flex-shrink: 0;
+			align-self: center;
+		}
+	}
+
+	// Remove dropdown card styling in mobile — flat stacked list.
+	.wp-block-navigation__submenu-container {
+		border: none !important;
+		border-radius: 0 !important;
+		box-shadow: none !important;
+		padding: 0 !important;
+		min-width: 0 !important;
+		background: transparent !important;
+		overflow: visible !important;
+		width: 100% !important;
+		flex-direction: column !important;
+		align-items: center;
+	}
+
+	// Submenu items: stacked and slightly muted.
+	.wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+		padding-left: 0;
+		font-size: var(--wp--preset--font-size--sm);
+		opacity: 0.7;
+	}
+
+	// Hide submenu when toggle is collapsed.
+	button[aria-expanded="false"].wp-block-navigation-submenu__toggle ~ .wp-block-navigation__submenu-container {
+		display: none !important;
+	}
 }
 
 // Responsive navigation toggle

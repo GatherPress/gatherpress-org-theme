@@ -68,6 +68,7 @@ if ( ! function_exists( 'gatherpress_org_theme_editor_style' ) ) :
 	 */
 	function gatherpress_org_theme_editor_style(): void {
 		add_editor_style( 'assets/css/editor-style.css' );
+		add_editor_style( 'build/style-style.css' );
 	}
 endif;
 add_action( 'after_setup_theme', 'gatherpress_org_theme_editor_style' );

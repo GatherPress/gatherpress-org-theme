@@ -266,7 +266,7 @@
 			},
 			"h2": {
 				"typography": {
-					"fontSize": "var:preset|font-size|2-xl",
+					"fontSize": "var:preset|font-size|xl",
 					"lineHeight": "1.2"
 				}
 			},

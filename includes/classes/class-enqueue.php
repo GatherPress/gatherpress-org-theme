@@ -76,6 +76,14 @@ class Enqueue {
 			'/js/event-search'
 		);
 
+		// Smart sticky header JS.
+		$this->enqueue_script(
+			'gatherpress-sticky-header',
+			$build_dir,
+			$build_uri,
+			'/js/sticky-header'
+		);
+
 		// Conditionally enqueue Swiper library.
 		$this->maybe_enqueue_swiper();
 	}

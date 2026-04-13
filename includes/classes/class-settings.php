@@ -50,110 +50,31 @@ class Settings {
 			'name'     => __( 'Theme', 'gatherpress-org-theme' ),
 			'priority' => 9,
 			'sections' => array(
-				'general'  => array(
-					'name'        => __( 'General', 'gatherpress-org-theme' ),
-					'description' => __( 'General theme settings for the GatherPress Org Theme.', 'gatherpress-org-theme' ),
-					'options'     => array(
-						'svg_upload'    => array(
-							'labels' => array(
-								'name' => __( 'SVG Upload Support', 'gatherpress-org-theme' ),
-							),
-							'field'  => array(
-								'label'   => __( 'Allow SVG file uploads in the media library.', 'gatherpress-org-theme' ),
-								'type'    => 'checkbox',
-								'options' => array(
-									'default' => true,
-								),
-							),
-						),
-						'enable_swiper' => array(
-							'labels' => array(
-								'name' => __( 'Swiper Library', 'gatherpress-org-theme' ),
-							),
-							'field'  => array(
-								'label'   => __( 'Enqueue the Swiper.js carousel library on the frontend.', 'gatherpress-org-theme' ),
-								'type'    => 'checkbox',
-								'options' => array(
-									'default' => false,
-								),
-							),
-						),
-					),
-				),
-				'login'    => array(
-					'name'        => __( 'Login & Redirect', 'gatherpress-org-theme' ),
-					'description' => __( 'Configure where users are redirected after login and logout.', 'gatherpress-org-theme' ),
-					'options'     => array(
-						'login_redirect'  => array(
-							'labels' => array(
-								'name' => __( 'Login Redirect', 'gatherpress-org-theme' ),
-							),
-							'field'  => array(
-								'label'   => __( 'URL path to redirect users after login.', 'gatherpress-org-theme' ),
-								'type'    => 'text',
-								'options' => array(
-									'default' => '/',
-								),
-							),
-						),
-						'logout_redirect' => array(
-							'labels' => array(
-								'name' => __( 'Logout Redirect', 'gatherpress-org-theme' ),
-							),
-							'field'  => array(
-								'label'   => __( 'URL path to redirect users after logout.', 'gatherpress-org-theme' ),
-								'type'    => 'text',
-								'options' => array(
-									'default' => '/',
-								),
-							),
-						),
-					),
-				),
-				'events'   => array(
+				'events' => array(
 					'name'        => __( 'Events', 'gatherpress-org-theme' ),
 					'description' => __( 'Control how GatherPress event content is handled.', 'gatherpress-org-theme' ),
 					'options'     => array(
-						'use_fse_event_template' => array(
-							'labels'      => array(
-								'name' => __( 'Use FSE Templates for Events', 'gatherpress-org-theme' ),
-							),
-							'description' => __( 'When enabled, new events start with a blank editor and GatherPress blocks are not rendered in the event content. Use Full Site Editing templates to control the event layout instead.', 'gatherpress-org-theme' ),
-							'field'       => array(
-								'label'   => __( 'Remove default GatherPress blocks from new events and use FSE templates for event layout.', 'gatherpress-org-theme' ),
-								'type'    => 'checkbox',
-								'options' => array(
-									'default' => false,
-								),
-							),
-						),
-					),
-				),
-				'comments' => array(
-					'name'        => __( 'Comments', 'gatherpress-org-theme' ),
-					'description' => __( 'Customize the comment form behavior.', 'gatherpress-org-theme' ),
-					'options'     => array(
-						'custom_comment_form' => array(
+						'blank_event_editor' => array(
 							'labels' => array(
-								'name' => __( 'Custom Comment Form', 'gatherpress-org-theme' ),
+								'name' => __( 'Blank Event Editor', 'gatherpress-org-theme' ),
 							),
 							'field'  => array(
-								'label'   => __( 'Use the theme\'s custom comment form textarea.', 'gatherpress-org-theme' ),
+								'label'   => __( 'New events start with a blank editor instead of pre-filled GatherPress blocks.', 'gatherpress-org-theme' ),
 								'type'    => 'checkbox',
 								'options' => array(
 									'default' => true,
 								),
 							),
 						),
-						'submit_button_text'  => array(
+						'suppress_gatherpress_blocks' => array(
 							'labels' => array(
-								'name' => __( 'Submit Button Text', 'gatherpress-org-theme' ),
+								'name' => __( 'Suppress GatherPress Blocks', 'gatherpress-org-theme' ),
 							),
 							'field'  => array(
-								'label'   => __( 'Text for the comment form submit button.', 'gatherpress-org-theme' ),
-								'type'    => 'text',
+								'label'   => __( 'GatherPress blocks will not render in the event content on the front end. Use FSE templates to control the event layout instead.', 'gatherpress-org-theme' ),
+								'type'    => 'checkbox',
 								'options' => array(
-									'default' => __( 'Post Comments', 'gatherpress-org-theme' ),
+									'default' => true,
 								),
 							),
 						),

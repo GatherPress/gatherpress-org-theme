@@ -1,0 +1,41 @@
+// Smart sticky header — scrolls away naturally, slides back fixed when scrolling up.
+
+header.wp-block-template-part:has(.gatherpress-sticky-header) {
+
+	// Remove the inner block's sticky positioning.
+	.gatherpress-sticky-header {
+		position: static !important;
+	}
+
+	// When fixed: pin to top and animate in.
+	&.gatherpress-sticky-header--fixed {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 100;
+		animation: gatherpress-slide-down 0.3s ease forwards;
+		box-shadow: 0 1px 3px rgb(0 0 0 / 8%);
+
+		.admin-bar & {
+			top: 32px;
+		}
+	}
+
+	// When hidden: slide back up.
+	&.gatherpress-sticky-header--hidden {
+		transform: translateY(-100%);
+		transition: transform 0.3s ease;
+		animation: none;
+	}
+}
+
+@keyframes gatherpress-slide-down {
+	from {
+		transform: translateY(-100%);
+	}
+
+	to {
+		transform: translateY(0);
+	}
+}

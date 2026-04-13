@@ -1,0 +1,38 @@
+@use "variables" as *;
+
+// Avatar stack — Luma-style overlapping avatars.
+// Avatars overlap with negative margins, bordered to separate visually.
+
+.is-style-avatar-stack {
+
+	// Each avatar item (rendered by rsvp-template) overlaps the previous.
+	[data-id] {
+		margin-left: -10px;
+
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+
+}
+
+// RSVP Response — ghost avatar empty state.
+// Shows 3 overlapping muted placeholder circles.
+
+.gatherpress-rsvp-response--no-responses {
+
+	&::before {
+		content: "";
+		display: block;
+		width: 40px;
+		height: 40px;
+		margin-right: var(--wp--preset--spacing--sm);
+		border-radius: 50%;
+		background: var(--wp--preset--color--border);
+		box-shadow:
+			30px 0 0 -2px var(--wp--preset--color--base),
+			30px 0 0 0 var(--wp--preset--color--border),
+			60px 0 0 -2px var(--wp--preset--color--base),
+			60px 0 0 0 var(--wp--preset--color--border);
+	}
+}
