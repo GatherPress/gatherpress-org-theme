@@ -29,48 +29,8 @@
 }
 
 // -----------------------------------------------
-// External link icon
-// -----------------------------------------------
-a:has(.anww-external-link-icon) {
-	display: inline-flex;
-	align-items: center;
-	gap: 6px;
-}
-
-.anww-external-link-icon {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	width: 26px;
-	height: 26px;
-	font-size: 0;
-	line-height: 1;
-	flex-shrink: 0;
-
-	&::before {
-		content: "";
-		display: block;
-		width: 26px;
-		height: 26px;
-		background-color: currentcolor;
-		mask: url("../../assets/images/outbound.svg") no-repeat center;
-		-webkit-mask: url("../../assets/images/outbound.svg") no-repeat center;
-		mask-size: contain;
-		-webkit-mask-size: contain;
-	}
-}
-
-.hide-external-icon .anww-external-link-icon {
-	display: none !important;
-}
-
-// -----------------------------------------------
 // Image block overrides
 // -----------------------------------------------
-.wp-block-image a .anww-external-link-icon {
-	display: none !important;
-}
-
 .wp-block-image a {
 	&:hover,
 	&:focus,
