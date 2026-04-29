@@ -46,17 +46,17 @@
 				{
 					"color": "#FFFFFF",
 					"name": "Surface",
-					"slug": "surface"
+					"slug": "gatherpress-surface"
 				},
 				{
 					"color": "#E5E7EB",
 					"name": "Border",
-					"slug": "border"
+					"slug": "gatherpress-border"
 				},
 				{
 					"color": "#F3F4F6",
 					"name": "Border Subtle",
-					"slug": "border-subtle"
+					"slug": "gatherpress-border-subtle"
 				}
 			]
 		},
