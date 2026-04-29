@@ -1,140 +1,48 @@
 @use "variables" as *;
 
-// Primary button
+// -----------------------------------------------
+// Primary button (solid accent background)
+// -----------------------------------------------
 .wp-block-button.is-style-primary .wp-block-button__link {
-	background: $color-primary-gradient;
-	color: #010505;
+	background-color: var(--wp--preset--color--accent);
+	color: var(--wp--preset--color--contrast);
 	border-radius: $radius-md;
 	border: none;
-}
-
-// Secondary button
-.wp-block-button.is-style-secondary .wp-block-button__link {
-	background: $color-accent;
-	color: $color-text;
-	border-radius: $radius-md;
-	box-shadow: 0px -1px 22.3px 0px $color-accent-shadow;
-}
-
-// Outline button
-.wp-block-button.is-style-style-3 .wp-block-button__link {
-	background-color: transparent;
-	color: $color-primary-darker;
-	border: 1px solid $color-border;
-	border-radius: $radius-md;
-	box-shadow: 0px -1px 22.3px 0px $color-accent-shadow;
-}
-
-// Small outline button
-.wp-block-button.is-style-style-4 .wp-block-button__link {
-	background-color: transparent;
-	color: $color-primary-darker;
-	border-radius: $radius-md;
-	border: 1px solid $color-border;
-}
-
-// Gradient with shadow
-.wp-block-button.is-style-style-5 .wp-block-button__link {
-	background: $color-primary-gradient;
-	box-shadow: $shadow-button;
-	color: $color-primary-darker;
-	border-radius: $radius-md;
-	border: none;
-}
-
-// Gradient white text with hover
-.wp-block-button.is-style-style-6 .wp-block-button__link {
-	background: $color-primary-gradient;
-	box-shadow: $shadow-button;
-	color: $color-white;
-	border-radius: $radius-md;
-	border: none;
-
-	&:hover {
-		background: transparent !important;
-		color: #1c76be !important;
-		box-shadow: none !important;
-		border-image-source: $color-primary-gradient;
-		border-radius: $radius-md;
-		border: 1px solid;
-		transition: all 0.3s ease !important;
-	}
-}
-
-// Icon button with home image
-.wp-block-button.is-style-style-7 .wp-block-button__link {
-	position: relative;
-	background-color: $color-primary;
-	color: $color-white;
-	border-radius: 15px;
-	border: none !important;
-	padding: 14px 14px 14px 80px;
-	font-weight: 400;
-	font-size: 20px;
-	display: inline-block;
-	text-decoration: none;
-	transition: background-color 0.3s ease;
-	max-width: 300px;
-	width: 100%;
-	text-align: left;
-
-	&:hover {
-		background-color: #3d73d6;
-	}
-
-	&::before {
-		content: "";
-		position: absolute;
-		top: 50%;
-		left: 0;
-		width: 67px;
-		height: 66px;
-		opacity: 1;
-		background-image: url("../../assets/images/home-image.svg");
-		background-size: cover;
-		background-repeat: no-repeat;
-		pointer-events: none;
-		transform: translateY(-50%);
-	}
-}
-
-// Custom login button
-.custom-login-btn {
-	display: inline-block;
-	border-radius: $radius-md;
-	padding: 16px 38px;
-	background: $color-accent;
-	box-shadow: 0px -1px 22.3px 0px $color-accent-shadow;
-	color: #000;
-	text-align: center;
-	font-weight: bold;
-	text-decoration: none;
+	transition: opacity $transition-base;
 
 	&:hover {
 		opacity: 0.9;
 	}
 }
 
-// Hover styles for explore and get-involved links
-.explore a:hover {
-	background: $color-primary-gradient !important;
-	color: $color-white;
+// -----------------------------------------------
+// Outline button (border + accent text)
+// -----------------------------------------------
+.wp-block-button.is-style-outline .wp-block-button__link {
+	background-color: transparent;
+	color: var(--wp--preset--color--accent);
+	border: 1px solid var(--wp--preset--color--border);
 	border-radius: $radius-md;
+	transition: background-color $transition-base, color $transition-base;
+
+	&:hover {
+		background-color: var(--wp--preset--color--accent);
+		color: var(--wp--preset--color--base);
+		border-color: var(--wp--preset--color--accent);
+	}
 }
 
-.wp-block-button.is-style-outline.get.is-style-outline--2 a:hover {
-	background: $color-primary-gradient !important;
-	color: $color-white !important;
-	box-shadow: $shadow-button !important;
-	border: 1px solid transparent;
+// -----------------------------------------------
+// Ghost button (no border, subtle hover)
+// -----------------------------------------------
+.wp-block-button.is-style-ghost .wp-block-button__link {
+	background-color: transparent;
+	color: var(--wp--preset--color--contrast);
+	border: none;
 	border-radius: $radius-md;
-	transition: all 0.3s ease !important;
-	border-image: none;
-}
+	transition: background-color $transition-base;
 
-.get-invloved a:hover {
-	background: $color-primary-gradient !important;
-	color: $color-white !important;
-	transition: all 0.3s ease !important;
-	border-image: none;
+	&:hover {
+		background-color: var(--wp--preset--color--accent-subtle);
+	}
 }

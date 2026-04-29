@@ -1,49 +1,24 @@
-// Colors
-$color-primary: #238ee3;
-$color-primary-dark: #1074c4;
-$color-primary-darker: #1769aa;
-$color-primary-gradient: linear-gradient(102.14deg, $color-primary 13.36%, $color-primary-dark 85.57%);
+// -----------------------------------------------
+// Design tokens — aligned with theme.json
+// Use CSS custom properties (var(--wp--preset--color--*))
+// in stylesheets when possible. These SCSS variables
+// are for media queries and build-time calculations only.
+// -----------------------------------------------
 
-$color-accent: #ccd87f;
-$color-accent-shadow: rgba(204, 216, 127, 0.21);
-
-$color-text: #2f312e;
-$color-text-light: #555;
-$color-text-muted: #6e7191;
-$color-text-form: #333;
-
-$color-border: #c5cdd2;
-$color-border-light: #ccc;
-$color-border-input: #ddd;
-
-$color-white: #fff;
-$color-link: #0073aa;
-$color-link-dark: #005bb5;
-$color-link-hover: #005d8f;
-
-$color-shadow: rgba(100, 100, 111, 0.2);
-$color-shadow-light: rgba(149, 157, 165, 0.2);
-
-$color-pagination: #2196f3;
-$color-pagination-dark: #0d47a1;
-
-$color-error-bg: #f8d7da;
-$color-error-text: #721c24;
-
-// Breakpoints
-$breakpoint-xl: 1024px;
-$breakpoint-lg: 900px;
-$breakpoint-md: 769px;
+// Breakpoints (can't use CSS custom properties in media queries)
+$breakpoint-xl: 1200px;
+$breakpoint-lg: 960px;
+$breakpoint-md: 768px;
 $breakpoint-sm: 576px;
-$breakpoint-xs: 475px;
-$breakpoint-xxs: 375px;
-$breakpoint-xxxs: 320px;
+$breakpoint-xs: 480px;
 
 // Border radius
 $radius-sm: 6px;
-$radius-md: 10px;
+$radius-md: 8px;
 $radius-lg: 12px;
+$radius-xl: 16px;
 
-// Shadows
-$shadow-card: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
-$shadow-button: 0px 8px 24px 0px rgba(149, 157, 165, 0.2);
+// Transitions
+$transition-fast: 150ms ease;
+$transition-base: 200ms ease;
+$transition-slow: 300ms ease;

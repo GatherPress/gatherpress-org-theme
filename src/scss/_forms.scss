@@ -7,7 +7,7 @@
 	input,
 	textarea {
 		padding: 10px;
-		border: 1px solid $color-border-input;
+		border: 1px solid var(--wp--preset--color--border);
 		border-radius: $radius-sm;
 		margin-bottom: 12px;
 	}
@@ -19,16 +19,17 @@
 	}
 
 	.form-submit input {
-		background: #0073e6;
-		color: $color-white;
+		background-color: var(--wp--preset--color--accent);
+		color: var(--wp--preset--color--base);
 		padding: 12px 20px;
 		border: none;
 		border-radius: $radius-sm;
 		cursor: pointer;
 		font-weight: 600;
+		transition: opacity $transition-base;
 
 		&:hover {
-			background: $color-link-dark;
+			opacity: 0.9;
 		}
 	}
 }
@@ -53,248 +54,17 @@
 }
 
 // -----------------------------------------------
-// Custom login form
-// -----------------------------------------------
-.custom-login-container {
-	display: flex;
-	padding: 30px;
-	gap: 30px;
-	align-items: flex-start;
-	flex-wrap: wrap;
-	box-sizing: border-box;
-
-	@media (max-width: 720px) {
-		padding: 16px;
-		gap: 16px;
-	}
-}
-
-.custom-login-image img {
-	max-width: 100%;
-	width: 100%;
-	height: auto;
-	object-fit: contain;
-	border-radius: $radius-lg;
-	display: block;
-}
-
-@media (max-width: 720px) {
-	.custom-login-wrapper {
-		padding: 20px;
-	}
-
-	.custom-login-title {
-		font-size: 22px;
-	}
-
-	.custom-login-subtitle {
-		font-size: 14px;
-		margin-bottom: 18px;
-	}
-
-	.custom-login-image {
-		width: 100%;
-
-		img {
-			max-height: 360px;
-			width: 100%;
-			object-fit: cover;
-		}
-	}
-
-	.remember-forgot {
-		flex-direction: column;
-		align-items: flex-start;
-		gap: 8px;
-	}
-
-	.custom-login-form .login-button {
-		padding: 12px;
-		font-size: 15px;
-	}
-}
-
-.custom-login-wrapper {
-	flex: 1 1 480px;
-	max-width: 648px;
-	width: 100%;
-	background: $color-white;
-	padding: 40px;
-	border-radius: $radius-lg;
-	box-sizing: border-box;
-	font-family: Arial, sans-serif;
-}
-
-.custom-login-title {
-	font-size: 28px;
-	font-weight: bold;
-	margin-bottom: 10px;
-	color: $color-link;
-	text-align: left;
-}
-
-.custom-login-subtitle {
-	font-size: 16px;
-	color: $color-text-light;
-	margin-bottom: 30px;
-	text-align: left;
-}
-
-.custom-login-form {
-	label {
-		display: block;
-		margin-bottom: 8px;
-		font-weight: 600;
-		color: $color-text-form;
-	}
-
-	input[type="text"],
-	input[type="password"] {
-		width: 100%;
-		padding: 12px;
-		margin-bottom: 20px;
-		border: 1px solid $color-border-light;
-		border-radius: $radius-sm;
-		background-color: #f5f8fa;
-		box-sizing: border-box;
-	}
-
-	.login-button {
-		width: 100%;
-		padding: 14px;
-		background: $color-link;
-		color: $color-white;
-		border: none;
-		border-radius: $radius-sm;
-		font-size: 16px;
-		cursor: pointer;
-
-		&:hover {
-			background: $color-link-hover;
-		}
-	}
-
-	.extra-links {
-		font-size: 14px;
-		text-align: center;
-		margin-top: 20px;
-
-		a {
-			color: $color-link;
-			text-decoration: none;
-
-			&:hover {
-				text-decoration: underline;
-			}
-		}
-	}
-}
-
-.remember-forgot {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-bottom: 20px;
-	flex-wrap: wrap;
-}
-
-.remember-me input {
-	margin-right: 8px;
-}
-
-.forgot-pass {
-	font-size: 14px;
-	text-decoration: none;
-	color: $color-link;
-
-	&:hover {
-		text-decoration: underline;
-	}
-}
-
-// -----------------------------------------------
-// Custom signup form
-// -----------------------------------------------
-.custom-signup-container {
-	padding: 30px;
-	border-radius: 8px;
-	font-family: Arial, sans-serif;
-	background: $color-white;
-
-	h2 {
-		color: #007bff;
-		font-size: 28px;
-		font-weight: bold;
-		margin-bottom: 15px;
-	}
-
-	p {
-		font-size: 14px;
-		margin-bottom: 15px;
-		color: $color-text-form;
-	}
-
-	label {
-		display: block;
-		font-size: 14px;
-		font-weight: bold;
-		margin-bottom: 5px;
-		color: $color-text-form;
-	}
-
-	input[type="email"],
-	input[type="password"],
-	input[type="text"] {
-		width: 100%;
-		padding: 12px;
-		margin-bottom: 15px;
-		border: 1px solid $color-border-light;
-		border-radius: 4px;
-		font-size: 14px;
-		box-sizing: border-box;
-	}
-
-	button {
-		width: 100%;
-		background: linear-gradient(90deg, #007bff, #0056b3);
-		color: $color-white;
-		padding: 12px;
-		font-size: 16px;
-		border: none;
-		border-radius: $radius-sm;
-		cursor: pointer;
-
-		&:hover {
-			opacity: 0.9;
-		}
-	}
-
-	.extra-info {
-		font-size: 12px;
-		color: #666;
-		margin-top: 15px;
-
-		a {
-			color: #007bff;
-			text-decoration: none;
-			font-weight: bold;
-		}
-	}
-}
-
-// -----------------------------------------------
 // Custom comment form (theme-specific)
 // -----------------------------------------------
 .custom-comment-form {
-	background: $color-white;
+	background-color: var(--wp--preset--color--base);
 	padding: 30px;
 	border-radius: $radius-lg;
 	max-width: 1320px;
 	margin: 20px auto;
-	font-family: Arial, sans-serif;
 
 	h2 {
-		color: $color-primary;
+		color: var(--wp--preset--color--accent);
 		font-size: 32px;
 		line-height: 1;
 		font-weight: 700 !important;
@@ -304,7 +74,7 @@
 	p {
 		font-size: 16px;
 		line-height: 1.6;
-		color: $color-text-muted;
+		color: var(--wp--preset--color--contrast-muted);
 		margin-bottom: 20px;
 	}
 
@@ -313,15 +83,15 @@
 		font-size: 16px;
 		line-height: 1.6;
 		font-weight: bold;
-		color: $color-text !important;
+		color: var(--wp--preset--color--contrast) !important;
 	}
 }
 
 .custom-comment-form-message {
-	background-color: $color-error-bg;
-	color: $color-error-text;
+	background-color: #fef2f2;
+	color: #991b1b;
 	padding: 12px;
-	border-radius: 8px;
+	border-radius: $radius-md;
 	margin-bottom: 20px;
 }
 
@@ -337,7 +107,7 @@
 	textarea {
 		padding: 10px;
 		border-radius: $radius-sm;
-		border: 1px solid $color-border-light;
+		border: 1px solid var(--wp--preset--color--border);
 		font-size: 14px;
 		width: 100%;
 		box-sizing: border-box;
@@ -370,62 +140,25 @@
 #char_count {
 	margin-top: 5px;
 	font-size: 12px;
-	color: #666;
+	color: var(--wp--preset--color--contrast-muted);
 }
 
 .submit-button {
 	max-width: 300px;
 	width: 100%;
 	height: 59px;
-	gap: 10px;
 	padding: 16px 24px;
 	border-radius: $radius-md;
-	background: $color-primary-gradient;
-	box-shadow: $shadow-button;
-	color: $color-white;
+	background-color: var(--wp--preset--color--accent);
+	color: var(--wp--preset--color--base);
 	border: none;
 	cursor: pointer;
 	font-size: 20px;
 	line-height: 1;
 	font-weight: bold;
-}
+	transition: opacity $transition-base;
 
-button:hover {
-	background: #0056b3;
-}
-
-// -----------------------------------------------
-// Gravity Forms
-// -----------------------------------------------
-.gform_button.button {
-	max-width: 300px;
-	width: 100%;
-	height: 59px;
-	gap: 10px;
-	padding: 16px 24px;
-	border-radius: $radius-md;
-	background: $color-primary-gradient;
-	box-shadow: $shadow-button;
-	color: $color-white;
-	border: none;
-	cursor: pointer;
-	font-size: 20px;
-	line-height: 1;
-	font-weight: bold;
-}
-
-.gform_fields {
-	input,
-	textarea {
-		padding: 10px;
-		border-radius: $radius-sm;
-		border: 1px solid $color-border-light;
-		font-size: 14px;
-		width: 100%;
-		box-sizing: border-box;
-	}
-
-	input {
-		height: 52px;
+	&:hover {
+		opacity: 0.9;
 	}
 }
