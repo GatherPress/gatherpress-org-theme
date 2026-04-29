@@ -1,13 +1,16 @@
-<!-- wp:template-part {"slug":"header"} /-->
+<?php
+/**
+ * Title: Recent Posts
+ * Slug: gatherpress-org-theme/recent-posts
+ * Categories: gatherpress_page
+ */
+?>
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|3-xl","bottom":"var:preset|spacing|3-xl"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--3-xl);padding-bottom:var(--wp--preset--spacing--3-xl)"><!-- wp:heading {"textAlign":"center","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|2-xl"}}},"textColor":"contrast"} -->
+<h2 class="wp-block-heading has-text-align-center has-contrast-color has-text-color" style="margin-bottom:var(--wp--preset--spacing--2-xl)"><?php esc_html_e( 'Latest News', 'gatherpress-org-theme' ); ?></h2>
+<!-- /wp:heading -->
 
-<!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|2-xl","bottom":"var:preset|spacing|3-xl"}}},"layout":{"type":"constrained"}} -->
-<main class="wp-block-group" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--2-xl);padding-bottom:var(--wp--preset--spacing--3-xl)"><!-- wp:query-title {"type":"search","textAlign":"center","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|lg"}},"typography":{"fontWeight":"800"}},"textColor":"contrast"} /-->
-
-<!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|2-xl"}}},"layout":{"type":"constrained","contentSize":"480px"}} -->
-<div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--2-xl)"><!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search\u2026","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true} /--></div>
-<!-- /wp:group -->
-
-<!-- wp:query {"queryId":6,"query":{"perPage":9,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"parents":[],"format":[]}} -->
+<!-- wp:query {"queryId":12,"query":{"perPage":3,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"exclude","inherit":false,"parents":[],"format":[]}} -->
 <div class="wp-block-query"><!-- wp:post-template {"layout":{"type":"grid","columnCount":3}} -->
 <!-- wp:group {"style":{"border":{"radius":"12px","width":"1px","color":"var:preset|color|gatherpress-border-subtle"},"spacing":{"padding":{"top":"0","bottom":"var:preset|spacing|lg","left":"0","right":"0"},"blockGap":"0"},"shadow":"var:preset|shadow|sm"},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group has-border-color" style="border-color:var(--wp--preset--color--gatherpress-border-subtle);border-width:1px;border-radius:12px;padding-top:0;padding-right:0;padding-bottom:var(--wp--preset--spacing--lg);padding-left:0;box-shadow:var(--wp--preset--shadow--sm)"><!-- wp:post-featured-image {"aspectRatio":"3/2","style":{"border":{"radius":{"topLeft":"12px","topRight":"12px","bottomLeft":"0px","bottomRight":"0px"}}}} /-->
@@ -24,18 +27,14 @@
 
 <!-- wp:query-no-results -->
 <!-- wp:paragraph {"align":"center","textColor":"contrast-muted"} -->
-<p class="has-text-align-center has-contrast-muted-color has-text-color">Sorry, no results were found. Please try a different search.</p>
+<p class="has-text-align-center has-contrast-muted-color has-text-color"><?php esc_html_e( 'No posts yet — check back soon!', 'gatherpress-org-theme' ); ?></p>
 <!-- /wp:paragraph -->
-<!-- /wp:query-no-results -->
+<!-- /wp:query-no-results --></div>
+<!-- /wp:query -->
 
-<!-- wp:query-pagination {"paginationArrow":"arrow","style":{"spacing":{"margin":{"top":"var:preset|spacing|2-xl"}}},"layout":{"type":"flex","justifyContent":"center"}} -->
-<!-- wp:query-pagination-previous /-->
-
-<!-- wp:query-pagination-numbers /-->
-
-<!-- wp:query-pagination-next /-->
-<!-- /wp:query-pagination --></div>
-<!-- /wp:query --></main>
+<!-- wp:group {"style":{"spacing":{"margin":{"top":"var:preset|spacing|2-xl"}}},"layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--2-xl)"><!-- wp:paragraph {"style":{"typography":{"fontWeight":"600"}},"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-weight:600"><a href="/blog/"><?php esc_html_e( 'View All Posts', 'gatherpress-org-theme' ); ?></a></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
 <!-- /wp:group -->
-
-<!-- wp:template-part {"slug":"footer"} /-->

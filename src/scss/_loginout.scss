@@ -1,12 +1,12 @@
+@use "variables" as *;
+
 .wp-block-loginout a {
-	display: inline-block;
-	padding: 16px 40px;
+	color: var(--wp--preset--color--base);
+	text-decoration: none;
+	transition: opacity $transition-fast;
 
-	@media (min-width: 601px) {
-		padding: 14px 28px;
-	}
-
-	@media (max-width: 768px) {
-		padding: 4px 10px;
+	&:hover {
+		opacity: 0.8;
+		text-decoration: none;
 	}
 }

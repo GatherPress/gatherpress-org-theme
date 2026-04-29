@@ -1,0 +1,54 @@
+@use "variables" as *;
+
+// Add to Calendar — icon-only trigger
+// Replaces the "Add to calendar" text with the calendar icon + a plus badge.
+// The text remains in the DOM for screen readers.
+
+// Calendar SVG from GatherPress dashicons (calendar.svg).
+$calendar-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M15 4h3v14H2V4h3V3c0-.83.67-1.5 1.5-1.5S8 2.17 8 3v1h4V3c0-.83.67-1.5 1.5-1.5S15 2.17 15 3v1zM6 3v2.5c0 .28.22.5.5.5s.5-.22.5-.5V3c0-.28-.22-.5-.5-.5S6 2.72 6 3zm7 0v2.5c0 .28.22.5.5.5s.5-.22.5-.5V3c0-.28-.22-.5-.5-.5s-.5.22-.5.5zm4 14V8H3v9h14zM7 16V9H5v7h2zm4 0V9H9v7h2zm4 0V9h-2v7h2z'/%3E%3C/svg%3E");
+
+.wp-block-gatherpress-add-to-calendar.is-style-calendar-icon-only .wp-block-gatherpress-dropdown__trigger {
+	position: relative;
+	display: block;
+	width: 28px;
+	height: 28px;
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
+
+	// Calendar icon.
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 22px;
+		height: 22px;
+		background-color: var(--wp--preset--color--accent);
+		mask-image: $calendar-svg;
+		mask-size: contain;
+		mask-repeat: no-repeat;
+		-webkit-mask-image: $calendar-svg;
+		-webkit-mask-size: contain;
+		-webkit-mask-repeat: no-repeat;
+		text-indent: 0;
+	}
+
+	// Plus badge — lower right.
+	&::after {
+		content: "+";
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		width: 14px;
+		height: 14px;
+		font-size: 12px;
+		font-weight: 700;
+		line-height: 14px;
+		text-align: center;
+		text-indent: 0;
+		color: var(--wp--preset--color--base);
+		background-color: var(--wp--preset--color--accent);
+		border-radius: 50%;
+	}
+}

@@ -7,6 +7,7 @@ module.exports = {
 	entry: {
 		'js/custom-comment-form': path.resolve( __dirname, 'src/js/custom-comment-form.js' ),
 		'js/event-search': path.resolve( __dirname, 'src/js/event-search.js' ),
+		'js/sticky-header': path.resolve( __dirname, 'src/js/sticky-header.js' ),
 		style: path.resolve( __dirname, 'src/scss/style.scss' ),
 	},
 	plugins: [

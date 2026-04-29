@@ -12,23 +12,23 @@
 	margin-left: 0 !important;
 	margin-right: auto !important;
 	justify-content: flex-start !important;
-	border: 1px solid #c2c5e1 !important;
+	border: 1px solid var(--wp--preset--color--border) !important;
 }
 
 .wp-block-search__input {
 	text-align: left !important;
 	flex: 1 1 auto !important;
-	color: rgba(144, 150, 178, 0.42) !important;
+	color: var(--wp--preset--color--contrast-muted) !important;
 }
 
 .wp-block-search__button {
 	flex: 0 0 auto !important;
-	background-color: $color-white !important;
-	color: #c2c5e1 !important;
+	background-color: var(--wp--preset--color--base) !important;
+	color: var(--wp--preset--color--contrast-muted) !important;
 }
 
 .wp-block-search__label {
-	color: $color-primary !important;
+	color: var(--wp--preset--color--accent) !important;
 	font-weight: 600;
 	font-size: 22px;
 }

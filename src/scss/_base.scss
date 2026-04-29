@@ -35,3 +35,8 @@ p {
 html {
 	scroll-behavior: smooth;
 }
+
+// Cross-document view transitions (chromium 126+)
+@view-transition {
+	navigation: auto;
+}
