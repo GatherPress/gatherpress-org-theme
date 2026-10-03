@@ -6,9 +6,19 @@ a {
 }
 
 // Focus styles
-:where(.wp-site-blocks *:focus) {
-	outline-width: 2px;
-	outline-style: solid;
+// Two-tone ring: the accent outline shows on light surfaces and the base
+// ring shows on dark and accent surfaces, so one always reaches 3:1.
+:where(.wp-site-blocks *:focus-visible) {
+	outline: 2px solid var(--wp--preset--color--accent);
+	outline-offset: 2px;
+	box-shadow: 0 0 0 4px var(--wp--preset--color--base);
+}
+
+// On contrast and accent surfaces, use a base outline. Some core blocks remove
+// the ring (Social Icons sets box-shadow: none), and an accent outline alone
+// is 2.71:1 on contrast and 1:1 on accent.
+:where(.has-contrast-background-color, .has-accent-background-color) :where(:focus-visible) {
+	outline-color: var(--wp--preset--color--base);
 }
 
 // Progressive enhancement to reduce widows and orphans
