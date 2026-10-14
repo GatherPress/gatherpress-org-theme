@@ -1,9 +1,9 @@
 === GatherPress Org Theme ===
 Contributors: The GatherPress Community
 Tags: block-theme, full-site-editing, events, community
-Requires at least: 6.0
-Tested up to: 6.8
-Requires PHP: 7.4
+Requires at least: 7.0
+Tested up to: 7.1
+Requires PHP: 8.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Description: A modern event-focused theme for GatherPress, designed to make community events look amazing out of the box.
