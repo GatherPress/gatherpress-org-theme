@@ -31,12 +31,16 @@ add_filter( 'gatherpress_autoloader', 'gatherpress_org_theme_autoloader' );
 /**
  * Initializes the GatherPress Org Theme setup.
  *
- * Only runs if the GatherPress plugin is active.
+ * Only runs once GatherPress has finished loading. The GATHERPRESS_* constants
+ * are defined before GatherPress's requirements check, so `defined()` on them
+ * would boot into classes whose autoloader was never registered when
+ * GatherPress bailed. `gatherpress_loaded` fires on `plugins_loaded`, before
+ * the theme loads, so this asks whether it already fired.
  *
  * @return void
  */
 function gatherpress_org_theme_setup(): void {
-	if ( defined( 'GATHERPRESS_VERSION' ) ) {
+	if ( did_action( 'gatherpress_loaded' ) ) {
 		GatherPress_Org_Theme\Setup::get_instance();
 	}
 }
